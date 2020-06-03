@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+
+{% extends 'RNG/base.html' %}
+{% load staticfiles %}
+
+<html>
+	<head>
+		{% block title_block %}
+			<title>Rate New Games ~ Sign Up</title>
+		{% endblock %}
+	
+	{% load static %}
+	<link href={% static "css/style.css" %} rel="stylesheet" type="text/css" />
+	<link href= {% static "css/buttons.css" %} rel="stylesheet" type="text/css" />
+	</head>
+
+{% block body_block %}
+	<body>
+		<div class="body centre">
+		<div class= "MVTitle ib"><u>Sign Up</u></div>
+		<br /><br />
+		{% if registered %}
+			<b>You are now registered! Follow this link to
+			<a href="{% url 'signin' %}">sign in.</a></b>
+			<br />
+		{% else %}
+			<b>Please fill out the forms below to sign up.</b>
+			<br />
+			<form method="post" action=".">	
+				{% csrf_token %}
+				{{ form.as_p }}
+				<input type="submit" name="submit" value="Sign Up" button class="signin"/>
+			</form>
+			<br />
+			Already have an account? <a href="{% url 'auth_login' %}">Sign in here!</a>
+		{% endif %}
+		</div>
+	</body>
+{% endblock %}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+
+{% extends 'RNG/base.html' %}
+{% load staticfiles %}
+
+<html>
+	<head>
+		{% block title_block %}
+			<title>Rate New Games ~ About Us</title>
+		{% endblock %}
+	</head>
+	
+	<body>
+	{% block body_block %}
+		<div class="body centre">
+		<br />
+		<div class= "MVTitle ib"><u>About RNG</u></div>
+		<br><br>
+		<b>
+        
+			RNG is a collaborative video game database website that allows anyone to search and sort Relatively New Games (released in the past 10 years) and 
+			view what users and verified critics have rated these games. If you <a href="{% url 'registration_register' %}">sign up</a> and <a href="{% url 'auth_login' %}">sign 
+			in</a> you can join in on the action and Rate New Games too! Be sure to use our categories function to help find similar games and be on the 
+			lookout for a <i class="criticEmail">critic</i> tag on a user as that means that the user is one of our verified critics. And if you're feeling lucky punk, you can use our Random New Game 
+			function on the home page to view a random game's page! ​
+
+			<p>
+
+			We hope RNG will help you to make informed choices on what games to buy, provide a discussion hub for games between you and other users and above all
+			else be a fun and optimisied experience.
+
+			<p>
+
+			If you are a game critic please email <b class="criticEmail">RateNewGamesAdmin@gmail.com</b> and we will verify you.
+		
+		</b>
+		</div>
+	{% endblock %}
+	</body>
+</html>

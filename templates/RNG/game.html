@@ -1,0 +1,82 @@
+{% extends 'RNG/base.html' %}
+
+{% load staticfiles %}
+
+{% block body_block %}
+
+<div class="body centre">
+	{% if game %}
+    <div class = "mostViewed centre">
+        <div class = "MVimageBlock ib">
+			<img src="/media/game_images/{{ game.file_name }}/" />
+		</div>
+        <div class = "MVtext center">
+            <div class = "MVTitle centre">{{game.name}}</div>          
+            <div class = "MVdescription centre">
+                <div>{{game.description}}</div>
+            </div>
+			<div class="ib">
+				<div class="ib">Average Critic rating:</div>
+				<div class = "rating ib fc">{{av_critic}}</div>
+			</div>
+			<div class="ib">
+				<div class="ib">&emsp;Average User rating:</div>
+				<div class = "rating ib fc">{{av_user}}</div>
+			</div>
+		</div>
+        
+    </div>
+	<div class = "leaveRating">
+		<div class= "MVTitle ib">Rate This Game</div>
+		{% if user.is_authenticated %}
+			{% if rated == True %}
+				<p>
+				You have already left a rating for this game.
+			{% else %}
+				<form method='POST' action=".">
+					{% csrf_token %}
+					{{ rating_form.as_p }}
+				<input type="submit" value="submit" button class="signin">
+			</form>
+			{% endif %}
+		{% else %}
+			<br />
+			Only signed in users can leave ratings. You can <a href="{% url 'auth_login' %}">sign in here</a> or 
+			<a href="{% url 'registration_register' %}">sign up here!</a>
+		{% endif %}
+		<p>
+	</div>
+		
+		<div class="comments">
+			<div class= "MVTitle ib">{{ comments.count }} Comment{{ comments|pluralize }}</div>
+			{% if user.is_authenticated %}
+				<form method='post' action=".">
+					{% csrf_token %}
+					{{ comment_form.as_p }}
+				<input type="submit" value="Comment" button class="signin">
+				</form>
+			{% else %}
+				<br />
+				Only signed in users can leave comments. You can <a href="{% url 'auth_login' %}">sign in here</a> or 
+				<a href="{% url 'registration_register' %}">sign up here!</a>
+			{% endif %}
+			
+			{% for comment in comments %}
+				<hr>
+				<b>
+				{% if comment.user.critic == True %} 
+					{{ comment.user }} <i style = "color: #00EE00">critic</i></b><br />
+				{% else %}
+					{{ comment.user }}</b><br />
+				{% endif %}
+				<p>{{ comment.content }}</p>
+				<p>{{ comment.timestamp }}</p>
+				<hr>
+			{% endfor %}
+		</div>
+	{% else %}
+		Something went wrong.
+	{% endif %}
+    
+</div>
+{% endblock %}

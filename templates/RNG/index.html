@@ -1,0 +1,75 @@
+{% extends 'RNG/base.html' %}
+
+{% load staticfiles %}
+
+{% block title_block %}
+	<title>Rate New Games ~ Home</title>
+{% endblock %}
+
+{% block body_block %}
+     <div class="body centre">
+      <a class="centre" href="{% url 'game' random_cat.slug random_game.slug %}">
+          <div class="randomGame centre"><button class="randomButton centre">Get A Random Game</button></div>
+      </a>
+      <div class="gameContainer centre">
+        <div class="GCTitle">New Releases</div>
+        <div class="GCgroup">
+        {% for game in newGames %}
+          <div class="GCGame ib">
+          {% if game.file_name %}  
+              <div class="GCImg">
+                  <a href="{% url 'game' game.category.slug game.slug %}"><img src="/media/game_images/{{ game.file_name}}/" alt="GameImage"></a>
+              </div>
+              <p class="GCName"><b>{{game.name}}</b></p>
+          {% else %}
+              <div class="GCImg">
+                  <a href="{% url 'game' game.category.slug game.slug %}"><img src={% static "images/game.jpg" %}></a>
+              </div>
+              <p class="GCName"><b>{{game.name}}</b></p>
+          {% endif %}
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+      
+      
+      <div class="gameContainer centre">
+        <div class="GCTitle">Popular Games</div>
+        <div class="GCgroup">
+        {% for game in topFive %}
+          <div class="GCGame ib">
+          {% if game.file_name %}  
+              <div class="GCImg">
+                  <a href="{% url 'game' game.category.slug game.slug %}"><img src="/media/game_images/{{ game.file_name}}/" alt="GameImage"></a>
+              </div>
+              <div class="GCName"><b>{{game.name}}</b></div>
+          {% else %}
+              <div class="GCImg">
+                  <a href="{% url 'game' game.category.slug game.slug %}"><img src={% static "images/game.jpg" %}></a>
+              </div>
+              <div class="GCName"><b>{{game.name}}</b></div>
+          {% endif %}
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+      
+      
+      {% if top.file_name %}
+      <div class="mostViewed centre">
+        <div class= "MVimageBlock ib">
+          <a href="{% url 'game' top.category.slug top.slug %}"><img src="/media/game_images/{{ top.file_name}}/"></a><!-- this is for the django tag!-->
+        </div>
+        <div class="MVtext">
+          <a href="{% url 'game' top.category.slug top.slug %}"><div class="MVTitle"><u>Highest Rated</u></div></a>
+          <div class="MVname">{{top.name}}</div><!-- this is for the django tag!-->
+          <div class="MVdescription">
+            <p>{{top.description}}</p><!-- this is for the django tag!-->
+          </div>
+        </div>
+      </div>       
+      {% endif %}
+      
+        
+      </div>
+{% endblock %}

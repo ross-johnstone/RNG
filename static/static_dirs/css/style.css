@@ -1,0 +1,1105 @@
+/*this loads the "Title font from a host website online fonts*/
+@font-face {font-family: "Title";
+    src: url("//db.onlinewebfonts.com/t/77dbd0c6619dff4c29d3390d42d6db42.eot");
+    src: url("//db.onlinewebfonts.com/t/77dbd0c6619dff4c29d3390d42d6db42.eot?#iefix") format("embedded-opentype"),
+    url("//db.onlinewebfonts.com/t/77dbd0c6619dff4c29d3390d42d6db42.woff2") format("woff2"),
+    url("//db.onlinewebfonts.com/t/77dbd0c6619dff4c29d3390d42d6db42.woff") format("woff"),
+    url("//db.onlinewebfonts.com/t/77dbd0c6619dff4c29d3390d42d6db42.ttf") format("truetype"),
+    url("//db.onlinewebfonts.com/t/77dbd0c6619dff4c29d3390d42d6db42.svg#Cinema Gothic BTN Inline") format("svg");
+}
+
+/*these are overwrites of host css*/
+body{
+      display: block;
+      margin: 0;
+      background-color: #ffffff;
+}
+
+div{
+      font-family: arial;
+}
+
+img{
+      width: auto; /* for IE8 support*/
+      max-width: 100%;
+      height: auto;
+}
+
+img:hover{
+      box-shadow: 2px 2px 6px 0px #696969;   
+}
+
+pre{
+      font-family: arial;
+      padding: 5px;
+}
+
+p{
+      font-family: arial;
+}
+
+b{
+     font-family:arial;
+}
+
+a {
+   pointer-events: auto !important;  
+   cursor: pointer !important;
+   text-decoration: none;  
+}
+
+/* these overwrite input fields so that they have the same styling as the search bar*/
+input[type=text]{
+      padding-left: 10px;
+      font-size: 20px;
+      width: 180px;
+      border: 1px solid #202020;
+      border-radius: 10px;
+      box-shadow: inset 0 0 2px #323232;
+      outline: none;
+}
+
+input[type=password]{
+      padding-left: 10px;
+      font-size: 20px;
+      width: 180px;
+      border: 1px solid #202020;
+      border-radius: 10px;
+      box-shadow: inset 0 0 2px #323232;
+      outline: none;
+}
+
+input[type=email]{
+      padding-left: 10px;
+      font-size: 20px;
+      width: 180px;
+      border: 1px solid #202020;
+      border-radius: 10px;
+      box-shadow: inset 0 0 2px #323232;
+      outline: none;
+}
+
+input[type=url]{
+      padding-left: 10px;
+      font-size: 20px;
+      width: 180px;
+      border: 1px solid #202020;
+      border-radius: 10px;
+      box-shadow: inset 0 0 2px #323232;
+      outline: none;
+}
+
+input:hover {
+      border: 1px solid #00EE00;     
+}
+
+input[type=submit]{
+        margin: 1px;
+        width: 160px;
+        height: 26px;
+        border: 2px solid #202020;
+        border-radius: 13px;
+        background-color: #00EE00;
+        color: #f7f7f7;
+        z-index: 2;  
+}
+
+input[type=submit]:hover{
+        background-color: rgb(0, 189, 0);
+        box-shadow: inset 0 0 6px #000000;    
+}
+
+
+
+/*beginning of main body*/
+/*////////////////////////*/
+
+/*The head styles the non sticking portion of the top bar*/
+.head{
+      max-width: 100vw;
+      background-color: #323232;
+      height: 100px;
+      position: sticky;
+      right:0;
+      left:0;
+      z-index: 1000;
+      margin: 0 auto;
+}
+/*styles the container that holds the elements on the top bar*/
+.top-square {
+      padding-top:0px;
+      height:100px;
+      background-color: #323232;
+      display: block;
+      position: sticky;
+      z-index: 5;
+      max-width: 960px;
+}
+
+/*styles the larger portion of main title*/
+.title1 {
+      margin: 0px;
+      color: #00EE00;
+      font-family: "Title", "Arial";
+      font-size: 80px;
+      padding-top: 20px;
+      padding-bottom: 0px;
+      padding-left:60px;
+}
+
+/*styles the smaller portion of main title*/
+.title2{
+      margin: 0px;
+      color: #00EE00;
+      font-family: "Title", "Arial";
+      font-size: 30px;
+      padding-top: 20px;
+      padding-bottom: 0px;
+}
+
+/*styles the sticking portion of the top bar*/
+.head2{
+      max-width: 100vw;
+      background-color: #323232;
+      height: 80px;
+      position: sticky;
+      top: 0;
+      right:0;
+      left:0;
+      margin: 0 auto;
+      box-shadow: 0 4px 6px 0 #797979;
+      z-index: 999;
+}
+
+/*styles the portion that holds the sticking part of the top bar */
+.top-square2 {
+      left: 65;
+      height:80px;
+      background-color: #323232;
+      max-width: 960px;
+      position: sticky;
+      top: 0px;
+}
+
+/* used to style the search bar*/
+.input{
+      padding-left: 10px;
+      font-size: 20px;
+      width: 180px;
+      border: 1px solid #202020;
+      border-radius: 10px;
+      box-shadow: inset 0 0 2px #323232;
+      outline: none;
+}
+
+/* changes the bar on hover */
+.input:hover {
+      border: 1px solid #00EE00;     
+}
+
+/*styles the search bar*/
+.searchBlock{
+      position:absolute;
+      right: 60px;
+      top: 25px;
+}
+
+.search {
+      margin-bottom: 0;
+      padding-right: 5px;
+      position: relative;
+      bottom: 0;
+}
+
+.searchButton{
+      position: relative;
+      top: 0;
+      height: 28px !important;
+      width: 36px !important;
+      background-color: #00EE00;
+      border: 2px solid #000000;
+      border-radius: 4px;
+      text-align: center;
+      color: #ffffff;
+}
+
+.searchButton:hover{
+      background-color: rgb(0, 189, 0);
+      box-shadow: inset 0 0 6px #000000;  
+}
+
+.line{
+      position: relative;
+      margin-top: 15px;
+      width: 1px;
+      height: 50px;
+      background-color:#757575;
+      display: inline-block;
+      box-shadow: 0 0 4px black;
+}
+
+/* is used in the main body of pages to cap the width of content at 960px in line with the standard set out by w3*/
+.body{
+      max-width: 960px;
+}
+.sticky{
+      position: sticky;
+      right:0;
+      left:0;
+      top:0;
+}
+
+/*centres the element in its parent*/
+.centre {
+      margin: 0 auto;
+}
+
+.ib{
+      display: inline-block;
+}
+
+.giant-box{
+      height: 3000px;
+      width: 5px;
+      background-color:#202020;    
+} 
+
+.marginLeft{
+      margin-left: 65px;
+      margin-right: 0px;
+}
+
+.title:hover {
+      text-shadow: 0 0 8px;
+}
+
+.white {
+      color: white;
+}
+
+.signinBlock{
+      position: absolute;
+      right: 60px;
+      top: 55px;
+}
+
+.signedinBlock{
+      position: absolute;
+      right: 60px;
+      top: 55px;
+}
+
+.Welcome{
+	   position: absolute;
+      right: 60px;
+      top: 35px;
+      margin: 1px;
+      font-family:"Arial";
+      color: #00EE00;
+	   text-align: center;
+}
+
+.WelcomeCritic{
+      position: absolute;
+      right: 110px;
+      top: 35px;
+      margin: 1px;
+      font-family:"Arial";
+      color: #00EE00;
+	   text-align: center;
+}
+
+.isCritic{
+      position: absolute;
+      right: 60px;
+      top: 35px;
+      margin: 1px;
+      font-family:"Arial";
+      color: #00EE00;
+	   text-align: center;        
+}
+
+.dropbtn {
+  min-width: 150px;
+  background-color: #323232;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  padding-top: 15px;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #ddd;}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {display: block;}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+  background-color: #323232;
+  box-shadow: inset 0px 0px 6px #000000;
+  border: 1px;
+  border-radius: 3px;
+}
+
+.padleft{
+  padding-left: 65px;
+}
+
+.signinContainer{
+  position: relative;
+  right: 0;
+}
+
+.signin{
+  margin: 1px;
+  width: 160px;
+  height: 26px;
+  border: 2px solid #202020;
+  border-radius: 13px;
+  background-color: #00EE00;
+  color: #f7f7f7;
+  z-index: 2;
+}
+
+.signin:hover {
+  background-color: rgb(0, 189, 0);
+  box-shadow: inset 0 0 6px #000000; 
+}
+
+
+
+/*The container holding the games*/
+.gameContainer{
+      max-width: 90%;
+      height: 290px;
+      background-color: #E1E1E1;
+      margin-top: 40px;
+      box-shadow: 4px 4px 8px 0px #696969;
+      position: sticky;
+      right:0;
+      left:0;
+}
+
+.GCTitle{
+      padding: 10px;
+      font-size: 200%;
+      color: #00EE00;
+      font-family: arial;
+      text-shadow:1px 1px 1px #6d6d6d;
+      display: block;
+}
+
+/*holds the games*/
+.GCgroup{
+      display: block;
+      position: sticky;
+      right:0;
+      left:0;
+}
+
+/*Holds individual game*/
+.GCGame{
+      display: inline-block;
+      text-align: center;
+      padding-left: 25px;
+      max-width:140px;
+      positon: absolute;
+      top: 0;
+      right:0;
+      left:0;
+}
+
+.GCImg{
+      width: 140px;
+      max-height: 191px;
+      overflow: hidden;
+}
+
+.GCName{
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 100%;
+      color: #323232;
+      margin: 4px;
+      max-width=140px;
+      overflow= auto;
+}
+
+
+
+/*This is for the container at the bottom of the page*/
+.mostViewed{
+      z-index: 5;
+      max-width: 90%;
+      height: 295px;
+      margin-top: 40px;
+      margin-bottom:40px;
+      position: sticky;
+      right:0;
+      left:0;
+}
+
+.MVimageBlock{
+      height: 270px;
+      width: 198px;
+      padding: 25px;
+      padding-top: 0;
+}
+
+.MVtop{
+      z-index:1000;       
+}
+.MVtext{
+      width: 70%;
+      display: inline-block;
+      position:absolute;
+      top: 25px;
+}
+
+.MVTitle{
+      font-family: Arial, Helvetica, sans-serif;
+      color: #00EE00;
+      font-size: 200%;
+      text-shadow:1px 1px 3px #D1D1D1;
+      padding-bottom: 10px;
+}
+
+.MVname{
+      font-family: Arial, Helvetica, sans-serif;
+      color: #00EE00;
+      font-size: 100%;
+}
+
+.MVdescription{
+      width: 100%;
+      height: 130px;
+      background-color: #E1E1E1;
+      box-shadow: 4px 4px 8px 0px #696969;
+}
+
+pre{
+      padding: 5px;
+}
+
+.randomGame{
+      padding-top: 25px;
+      width: 100%;
+      height: 50px;       
+}
+
+.randomButton{
+      color: #ffffff;
+      font-size: 200%;
+      text-align: centre;
+      font-family: Title;    
+      background-color: #00EE00;
+      border: 2px solid #202020;
+      border-radius: 13px;
+      width: 864px;
+      height: 50px;
+      position: absolute;
+      right:0;
+      left:0;
+}
+
+.randomButton:hover{
+      background-color: rgb(0, 189, 0);
+      box-shadow: inset 0 0 6px #000000;        
+}
+
+
+.rating{
+      margin-top: 10px;
+      width: 50px;
+      border: 2px #000000;
+      border-radius: 4px;
+      font-family: arial;
+      text-align: center;
+      background-color: #E1E1E1;
+      box-shadow: 2px 2px 6px 0px #696969;
+      height: 20px;
+}
+
+.fc{
+      padding: 5px 0;
+}
+
+.criticEmail{
+      color: #00EE00;        
+}
+
+
+
+/*This implements minor scalability however does not scale the top bar*/
+@media only screen and (max-width: 977px) {
+
+/*these are overwrites of standard css*/
+body{
+      display: block;
+      margin: 0;
+      background-color: #ffffff;
+}
+
+div{
+      font-family: arial;
+}
+
+img{
+      width: auto; /* for IE8 support*/
+      max-width: 100%;
+      height: auto;
+}
+
+img:hover{
+      box-shadow: 2px 2px 6px 0px #696969;   
+}
+
+pre{
+      font-family: arial;
+      padding: 5px;
+}
+
+p{
+      font-family: arial;
+}
+
+b{
+     font-family:arial;
+}
+
+a {
+   pointer-events: auto !important;  
+   cursor: pointer !important;
+   text-decoration: none;
+   
+}
+
+.head{
+      max-width: 100vw;
+      background-color: #323232;
+      height: 100px;
+      position: sticky;
+      right:0;
+      left:0;
+      z-index: 1000;
+      margin: 0 auto;
+}
+.head2{
+      max-width: 100vw;
+      background-color: #323232;
+      height: 80px;
+      position: sticky;
+      top: 0;
+      right:0;
+      left:0;
+      margin: 0 auto;
+      box-shadow: 0 4px 6px 0 #797979;
+      z-index: 999;
+}
+
+
+.body{
+      max-width: 960px;
+}
+.sticky{
+      position: sticky;
+      right:0;
+      left:0;
+      top:0;
+}
+
+.top-square {
+      padding-top:0px;
+      height:100px;
+      background-color: #323232;
+      display: block;
+      position: sticky;
+      z-index: 5;
+      max-width: 960px;
+}
+.top-square2 {
+      left: 65;
+      height:80px;
+      background-color: #323232;
+      max-width: 960px;
+      position: sticky;
+      top: 0px;
+}
+
+.centre {
+      margin: 0 auto;
+}
+.title1 {
+      margin: 0px;
+      color: #00EE00;
+      font-family: "Title", "Arial";
+      font-size: 80px;
+      padding-top: 20px;
+      padding-bottom: 0px;
+      padding-left:60px;
+}
+
+.title2{
+      margin: 0px;
+      color: #00EE00;
+      font-family: "Title", "Arial";
+      font-size: 30px;
+      padding-top: 20px;
+      padding-bottom: 0px;
+}
+
+.ib{
+      display: inline-block;
+}
+
+.input{
+      padding-left: 10px;
+      font-size: 20px;
+      width: 180px;
+      border: 1px solid #202020;
+      border-radius: 10px;
+      box-shadow: inset 0 0 2px #323232;
+      outline: none;
+}
+
+.input:hover {
+      border: 1px solid #00EE00;     
+}
+
+input[type=text]{
+      padding-left: 10px;
+      font-size: 20px;
+      width: 180px;
+      border: 1px solid #202020;
+      border-radius: 10px;
+      box-shadow: inset 0 0 2px #323232;
+      outline: none;
+}
+
+input[type=password]{
+      padding-left: 10px;
+      font-size: 20px;
+      width: 180px;
+      border: 1px solid #202020;
+      border-radius: 10px;
+      box-shadow: inset 0 0 2px #323232;
+      outline: none;
+}
+
+input[type=email]{
+      padding-left: 10px;
+      font-size: 20px;
+      width: 180px;
+      border: 1px solid #202020;
+      border-radius: 10px;
+      box-shadow: inset 0 0 2px #323232;
+      outline: none;
+}
+
+input[type=url]{
+      padding-left: 10px;
+      font-size: 20px;
+      width: 180px;
+      border: 1px solid #202020;
+      border-radius: 10px;
+      box-shadow: inset 0 0 2px #323232;
+      outline: none;
+}
+
+input:hover {
+      border: 1px solid #00EE00;     
+}
+
+input[type=submit]{
+        margin: 1px;
+        width: 160px;
+        height: 26px;
+        border: 2px solid #202020;
+        border-radius: 13px;
+        background-color: #00EE00;
+        color: #f7f7f7;
+        z-index: 2;  
+}
+
+input[type=submit]:hover{
+        background-color: rgb(0, 189, 0);
+        box-shadow: inset 0 0 6px #000000;    
+}
+
+.searchBlock{
+      position:absolute;
+      right: 60px;
+      top: 25px;
+}
+
+.search {
+      margin-bottom: 0;
+      padding-right: 5px;
+      position: relative;
+      bottom: 0;
+}
+
+.searchButton{
+      position: relative;
+      top: 0;
+      height: 28px !important;
+      width: 36px !important;
+      background-color: #00EE00;
+      border: 2px solid #000000;
+      border-radius: 4px;
+      text-align: center;
+      color: #ffffff;
+}
+
+.searchButton:hover{
+      background-color: rgb(0, 189, 0);
+      box-shadow: inset 0 0 6px #000000;  
+}
+
+.giant-box{
+      height: 3000px;
+      width: 5px;
+      background-color:#202020;    
+} 
+
+.line{
+      position: relative;
+      margin-top: 15px;
+      width: 1px;
+      height: 50px;
+      background-color:#757575;
+      display: inline-block;
+      box-shadow: 0 0 4px black;
+}
+
+.marginLeft{
+      margin-left: 65px;
+      margin-right: 0px;
+}
+
+.title:hover {
+      text-shadow: 0 0 8px;
+}
+
+.white {
+      color: white;
+}
+
+.signinBlock{
+      position: absolute;
+      right: 60px;
+      top: 55px;
+}
+
+.signedinBlock{
+      position: absolute;
+      right: 60px;
+      top: 55px;
+}
+
+.Welcome{
+	   position: absolute;
+      right: 60px;
+      top: 35px;
+      margin: 1px;
+      font-family:"Arial";
+      color: #00EE00;
+	   text-align: center;
+}
+
+.WelcomeCritic{
+      position: absolute;
+      right: 110px;
+      top: 35px;
+      margin: 1px;
+      font-family:"Arial";
+      color: #00EE00;
+	   text-align: center;
+}
+
+.isCritic{
+      position: absolute;
+      right: 60px;
+      top: 35px;
+      margin: 1px;
+      font-family:"Arial";
+      color: #00EE00;
+	   text-align: center;        
+}
+
+.dropbtn {
+  min-width: 150px;
+  background-color: #323232;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  padding-top: 15px;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #ddd;}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {display: block;}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+  background-color: #323232;
+  box-shadow: inset 0px 0px 6px #000000;
+  border: 1px;
+  border-radius: 3px;
+}
+
+.padleft{
+  padding-left: 65px;
+}
+
+.signinContainer{
+  position: relative;
+  right: 0;
+}
+
+.signin{
+  margin: 1px;
+  width: 160px;
+  height: 26px;
+  border: 2px solid #202020;
+  border-radius: 13px;
+  background-color: #00EE00;
+  color: #f7f7f7;
+  z-index: 2;
+}
+
+.signin:hover {
+  background-color: rgb(0, 189, 0);
+  box-shadow: inset 0 0 6px #000000; 
+}
+
+
+
+/*The container holding the games*/
+.gameContainer{
+      max-width: 90%;
+      height: 290px;
+      background-color: #E1E1E1;
+      margin-top: 40px;
+      box-shadow: 4px 4px 8px 0px #696969;
+      position: sticky;
+      right:0;
+      left:0;
+}
+
+.GCgroup > div{
+      flex-shrink: 0;
+      max-height: 230px;
+}
+
+.GCTitle{
+      padding: 10px;
+      font-size: 200%;
+      color: #00EE00;
+      font-family: arial;
+      text-shadow:1px 1px 1px #6d6d6d;
+      display: block;
+}
+
+/*holds the games*/
+.GCgroup{
+      display: block;
+      position: sticky;
+      right:0;
+      left:0;
+      
+      
+          /* line them up horizontally */
+      display: flex;
+    
+      /* allow for scrolling */
+      overflow-x: auto;
+    
+      /* make it smooth on iOS */
+      -webkit-overflow-scrolling: touch;
+}
+
+/*Holds individual game*/
+.GCGame{
+      display: inline-block;
+      text-align: center;
+      padding-left: 25px;
+      max-width:140px;
+      positon: absolute;
+      top: 0;
+      right:0;
+      left:0;
+}
+
+.GCImg{
+      width: 140px;
+      max-height: 191px;
+      overflow-y: hidden;
+}
+
+.GCName{
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 100%;
+      color: #323232;
+      margin: 4px;
+      max-width=140px;
+      overflow= auto;
+}
+
+
+
+/*This is for the container at the bottom of the page*/
+.mostViewed{
+      z-index: 5;
+      max-width: 90%;
+      height: 295px;
+      margin-top: 40px;
+      margin-bottom:40px;
+      position: sticky;
+      right:0;
+      left:0;
+}
+
+.MVimageBlock{
+      max-height: 135px;
+      max-width: 99px;
+      padding: 5px;
+      padding-top: 0;
+}
+
+.MVtop{
+      z-index:1000;       
+}
+.MVtext{
+      max-width: 590px;
+      display: inline-block;
+      position:absolute;
+      top: 25px;
+}
+
+.MVTitle{
+      font-family: Arial, Helvetica, sans-serif;
+      color: #00EE00;
+      font-size: 200%;
+      text-shadow:1px 1px 3px #D1D1D1;
+      padding-bottom: 10px;
+}
+
+.MVname{
+      font-family: Arial, Helvetica, sans-serif;
+      color: #00EE00;
+      font-size: 100%;
+}
+
+.MVdescription{
+      width: 100%;
+      height: 130px;
+      background-color: #E1E1E1;
+      box-shadow: 4px 4px 8px 0px #696969;
+}
+
+pre{
+      padding: 5px;
+}
+
+.randomGame{
+      padding-top: 25px;
+      width: 100%;
+      min-height: 50px;       
+}
+
+.randomButton{
+      color: #ffffff;
+      font-size: 200%;
+      text-align: centre;
+      font-family: Title;    
+      background-color: #00EE00;
+      border: 2px solid #202020;
+      border-radius: 13px;
+      width: 85%;
+      min-height: 50px;
+      position: absolute;
+      right:0;
+      left:0;
+}
+
+.randomButton:hover{
+      background-color: rgb(0, 189, 0);
+      box-shadow: inset 0 0 6px #000000;        
+}
+
+
+.rating{
+      margin-top: 10px;
+      width: 50px;
+      border: 2px #000000;
+      border-radius: 4px;
+      font-family: arial;
+      text-align: center;
+      background-color: #E1E1E1;
+      box-shadow: 2px 2px 6px 0px #696969;
+      height: 20px;
+}
+
+.fc{
+      padding: 5px 0;
+}
+
+.criticEmail{
+      color: #00EE00;        
+}
+}

@@ -1,0 +1,29 @@
+{% extends 'RNG/base.html' %}
+{% load staticfiles %}
+
+
+{% block body_block %}
+	<div class = "body centre">
+	<br />
+	<div class= "MVTitle ib"><u>Request a Game</u></div>
+	{% if user.is_authenticated %}
+			<br />Please fill out the forms below to request a game. <b>Fill out release date in YYYY-MM-DD format</b>
+            <form id="game_form" method='POST' action="." enctype="multipart/form-data">
+					{% csrf_token %}
+					{{ game_form.as_p }}
+					<b>Please enter the picture file name and type as displayed above once you have selected the image</b>
+				<input type="submit" name="submit" value="submit" button class="signin" onclick="myFunction();">
+			</form>
+			<script>
+				function myFunction() {
+					alert("Your addition will be verified by an admin. Thank you for your contribution.")
+				}
+			</script>
+	{% else %}
+		<p>
+		<b>You must be logged in to add a game. 
+		<a href="{% url 'auth_login' %}">sign in here</a> or 
+		<a href="{% url 'registration_register' %}">sign up here!</a></b>
+	{% endif %}
+	</div>
+{% endblock %}

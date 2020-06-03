@@ -1,0 +1,26 @@
+{% extends 'RNG/base.html' %}
+{% load staticfiles %}
+
+
+{% block body_block %}
+<div class="body centre">
+	{% if games %}
+		{% for game in games %}
+		<div class = "mostViewed centre">    
+			<div class = "MVimageBlock ib">
+				<a class="MVtop" href="{% url 'game' category.slug game.slug %}"><img src="/media/game_images/{{ game.file_name }}/" alt="GameImage"/></a>
+			</div>
+			<div class = "MVtext">
+				<a class="MVtop" href="{% url 'game' category.slug game.slug %}"><div class = "MVTitle"><u>{{game.name}}</u></div></a>
+			</div>
+		</div>
+		{% endfor %}
+	{% else %}
+	<div class = "mostViewed centre">
+        <div class = "MVtext">
+            <div class = "MVTitle">There are no games to display.</div>            
+        </div>
+    </div>
+	{% endif %}
+</div>
+{% endblock %}

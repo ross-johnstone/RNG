@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+{% extends 'RNG/base.html' %}
+{% load staticfiles %}
+
+<html>
+	<head>
+		{% block title_block %}
+			<title>Rate New Games ~ Log In</title>
+		{% endblock %}
+	
+	{% load static %}
+	<link href={% static "css/style.css" %} rel="stylesheet" type="text/css" />
+	<link href= {% static "css/buttons.css" %} rel="stylesheet" type="text/css" />
+	</head>
+	
+{% block body_block %}
+	<body>
+		<div class="body centre">
+		<br />
+		<div class= "MVTitle ib"><u>Log In</u></div>
+		<br /><br />
+		{% if user.is_authenticated %}
+			<b>You are already signed in! Follow this link to the
+			<a href="{% url 'index' %}">homepage.</a></b>
+			<br />
+		{% else %}
+			<b>Please enter your username and password below to sign in.</b>
+			<br /><br />
+			<form method="post" action=".">
+				{% csrf_token %}
+				{{ form.as_p }}
+				<input type="submit" value="Log in" button class="signin"/>
+				<input type="hidden" name="next" value="{{ next }}" />
+			</form>
+			<br />
+		Don't already have an account? <a href="{% url 'registration_register' %}">Sign up here!</a>
+		</div>
+		{% endif %}
+	</body>
+{% endblock %}
+		

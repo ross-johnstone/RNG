@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+
+{% load staticfiles %}
+
+<html>
+  <head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+		{% block title_block %}
+			<title>Rate New Games</title>
+		{% endblock %}
+	{% load static %}
+	<link href={% static "css/style.css" %} rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="head">
+
+      <div class="top-square centre">
+      
+        <div class="title ib">
+          <a href="{% url 'index' %}"><p class="title1 ib">RNG.</p></a>
+          <div class= "title2 ib">com</div>
+        </div>
+      
+
+			{% if user.is_authenticated %}
+				{% if user.critic %}
+            <div class="WelcomeCritic ib">Welcome {{ user.username }}</div><div class="isCritic ib">(critic)</div>
+            {% else %}
+            <div class="Welcome ib">Welcome {{ user.username }}</div>
+            {% endif %}
+				<div class="signedinBlock ib">
+				<a href="{% url 'auth_password_change' %}"><div><button class="signin ">Change Password</button></div></a>
+				<a href="{% url 'signout' %}"><div><button class="signin ">Sign Out</button></div></a>
+				</div>
+			{% else %}
+			    <div class="signinBlock ib">
+				<a href="{% url 'auth_login' %}"><div><button class="signin ">Sign In</button></div></a>
+				<a href="{% url 'registration_register' %}"><div><button class="signin ">Sign Up</button></div></a>
+				</div>
+			{% endif %}
+        </div>
+    </div>
+
+    <div class="head2">
+      <div class="top-square2 sticky centre">
+        
+        <div class="line marginLeft"></div>
+        
+        <div class="dropdown">
+          <a href="{% url 'index' %}"><button class="dropbtn">Home</button></a>
+          <div class="dropdown-content">
+            <a href="{% url 'about' %}">About</a>
+          </div>
+        </div>
+        
+        <div class="line"></div>
+
+        <div class="dropdown">
+          <a href="{% url 'allgames' %}"><button class="dropbtn">All Games</button></a>
+          <div class="dropdown-content">
+            <a href="{% url 'add_game' %}">Add Game</a>
+          </div>
+        </div>
+        
+        <div class="line"></div>
+
+        <div class="dropdown">
+          <a href="{% url 'show_categories' %}"><button class="dropbtn">Categories</button></a>
+        </div>
+
+        <div class="line"></div>
+              
+        <div class="ib searchBlock padleft">
+            <form name="myform" method="GET" action="{% url 'search' %}">
+            <input type="text" name="search" placeholder="Search Games">
+            <input type="submit" value="GO" class="ib searchButton">
+            </form>
+        </div>
+         
+        </div>
+      </div>
+    </div>
+    <div>
+        <script>
+            (function() {
+              var cx = '010899622192003857692:ya2aiodpztu';
+              var gcse = document.createElement('script');
+              gcse.type = 'text/javascript';
+              gcse.async = true;
+              gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+              var s = document.getElementsByTagName('script')[0];
+              s.parentNode.insertBefore(gcse, s);
+            })();
+          </script>
+          <gcse:search></gcse:search>
+    </div>
+	{% block body_block %}
+	{% endblock %}
+  </body>
+</html>
